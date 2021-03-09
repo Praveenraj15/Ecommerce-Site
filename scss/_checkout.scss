@@ -1,0 +1,165 @@
+#checkout-wraper {
+  padding-top: 12rem;
+}
+
+.no-order {
+  font-size: 1.8rem;
+}
+
+.checkout_card {
+  padding: 0px 30px;
+  border-radius: 3px;
+
+  @media (max-width: 767px) {
+    padding: 0px 0px;
+  }
+}
+
+.checkout_title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.place_order_card {
+  & > * {
+    margin-bottom: 20px;
+  }
+
+  hr {
+    height: 1px;
+    background-color: $font-color-2;
+  }
+
+  border: 1px solid $color-primary;
+  padding: 16px;
+
+  .order_title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-primary;
+  }
+
+  .total_amt_container {
+    font-size: 18px;
+    font-weight: 600;
+    color: seagreen;
+  }
+}
+
+.checkout_product_card {
+  cursor: pointer;
+  align-items: center;
+  padding: 0px 6px;
+  display: flex;
+  border: 1px solid$color-primary;
+  border-radius: 3px;
+  margin: 20px 0;
+  transition: all 0.2s ease;
+
+  & .checkout_product {
+    & img {
+      width: 120px;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 2px 16px 4px #282c3f12;
+  }
+}
+
+.checkout_prod_details {
+  & > * {
+    margin: 10px 0;
+  }
+
+  .checkout_prod_title {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .checkout_prod_brand {
+    font-size: 14px;
+    color: $font-color-2;
+  }
+
+  .checkout_prod_qty {
+    font-size: 1.5rem;
+    color: $font-color-1;
+    font-weight: 600;
+  }
+
+  .checkout_prod_price {
+    font-size: 1.5rem;
+    color: $color-primary;
+    font-weight: 600;
+  }
+  margin: 14px;
+
+  @media (max-width: 767px) {
+    margin: 0px 14px;
+  }
+}
+
+.order_amt {
+  display: flex;
+  justify-content: space-between;
+
+  & .amount_title,
+  .amount_price {
+    font-size: 1.6rem;
+    color: $font-color-1;
+    font-weight: 500;
+  }
+}
+
+.order_vat_amt {
+  display: flex;
+  justify-content: space-between;
+
+  & .vat_title,
+  .vat_price {
+    font-size: 1.6rem;
+    color: $font-color-1;
+    font-weight: 500;
+  }
+}
+
+.total_amt_container {
+  display: flex;
+  justify-content: space-between;
+
+  & .total_amt_title,
+  .total_amt_price {
+    font-size: 2rem;
+    color: $color-primary;
+    font-weight: 600;
+  }
+}
+
+.place_order {
+  cursor: pointer;
+  background-color: $font-color-1;
+  color: #fff;
+  font-weight: 500;
+  border: 1px solid $font-color-2;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
+
+  & ion-icon {
+    font-size: 14px;
+    padding-bottom: 2px;
+    padding-right: 8px;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+  }
+}

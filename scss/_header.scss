@@ -1,0 +1,118 @@
+header {
+  position: fixed;
+  background-color: #fff;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  border-bottom: 2px solid #eee;
+
+  & .nav_wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  & .logo,
+  .menu {
+    display: inline-block;
+  }
+
+  & .logo {
+    text-align: center;
+    margin-right: 20px;
+    padding-top: 10px;
+
+    & img {
+      width: 85%;
+    }
+  }
+
+  & .menu_items {
+    & li {
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      margin: 15px;
+      font-weight: 500;
+      font-size: 1.5rem;
+
+      a {
+        text-decoration: none;
+        color: $font-color-1;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+
+      &.active {
+        color: $color-primary;
+
+        & a {
+          color: $color-primary;
+        }
+
+        &::before {
+          width: 100%;
+          left: 0;
+        }
+      }
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      &::before {
+        @include hoverUnderline($color-primary);
+      }
+
+      &:hover::before {
+        @include hoverScale;
+      }
+    }
+  }
+
+  & .cart_wrapper {
+    & ion-icon {
+      font-size: 2.6rem;
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    & .cart_icon {
+      position: relative;
+      text-align: center;
+
+      & a {
+        text-decoration: none;
+        color: $font-color-1;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      & #cart_count {
+        position: absolute;
+        font-size: 1.2rem;
+        font-family: inherit;
+        background-color: $color-primary;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        right: 0;
+        border-radius: 10px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

@@ -51,7 +51,9 @@ fetch(url)
 const homeProduct = (data) => {
   let productList = `<div class="col-1-of-5">
                        <div class="product_image">
+                        <a href="./product.html?id=${data.id}">
                            <img src="${data.preview}" />
+                        </a>   
                         </div>
                 <div class="product_meta">
                     <span>
@@ -61,7 +63,7 @@ const homeProduct = (data) => {
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star-outline"></ion-icon>
                     </span>
-                    <h3 class="product_title">${data.name}</h3>
+                    <h3 class="product_title"><a href="./product.html?id=${data.id}">${data.name}</a></h3>
                     <p class="product_cat">${data.brand}</p>
                     <p class="price">Rs ${data.price}</p>
                     <button id="add_to_cart" data-id="${data.id}" data-name="${data.name}" data-brand="${data.brand}" data-price="${data.price}" data-preview="${data.preview}">Add to cart</button>
@@ -71,80 +73,3 @@ const homeProduct = (data) => {
 
   return productList;
 };
-
-
-// add to cart
-
-document.body.addEventListener("click", function (e) {
-  if (e.target.id == "add_to_cart") {
-    let data = e.target.dataset;
-    addToCrat(data);
-  }
-});
-
-const cartCount = document.getElementById("cart_count");
-const cartPopup = document.getElementsByClassName("added_popup");
-
-const addToCrat = (data) => {
-  let productDetails = [];
-  let totalCount = 0;
-
-  if (localStorage.getItem("productList") == undefined) {
-    data.quantity = 1;
-    data.totalPrice = data.quantity * data.price;
-    productDetails.push(JSON.parse(JSON.stringify(data)));
-    localStorage.setItem("productList", JSON.stringify(productDetails));
-    totalCount = 1;
-  } else {
-    productDetails = JSON.parse(localStorage.getItem("productList"));
-    let foundAtPos = -1;
-
-    for (let i = 0; i < productDetails.length; i++) {
-      totalCount += Number(productDetails[i].quantity);
-      if (productDetails[i].id === data.id) {
-        foundAtPos = i;
-      }
-    }
-
-    if (foundAtPos > -1) {
-      productDetails[foundAtPos].quantity = (
-        Number(productDetails[foundAtPos].quantity) + 1
-      ).toString();
-      productDetails[foundAtPos].totalPrice = (
-        productDetails[foundAtPos].quantity * productDetails[foundAtPos].price
-      ).toString();
-      localStorage.setItem("productList", JSON.stringify(productDetails));
-      totalCount++;
-    } else {
-      data.quantity = 1;
-      data.totalPrice = data.quantity * data.price;
-      productDetails.push(JSON.parse(JSON.stringify(data)));
-      localStorage.setItem("productList", JSON.stringify(productDetails));
-      totalCount++;
-    }
-  }
-
-  cartCount.innerHTML = totalCount;
-
-  cartPopup[0].classList.add("show");
-
-  setTimeout(function () {
-    cartPopup[0].classList.remove("show");
-  }, 2000);
-};
-
-function countProduct() {
-  let totalCount = 0;
-  if (localStorage.getItem("productList") == undefined) {
-    totalCount = 0;
-  } else {
-    let productList = JSON.parse(localStorage.getItem("productList"));
-    for (let i = 0; i < productList.length; i++) {
-      totalCount += Number(productList[i].quantity);
-    }
-  }
-  cartCount.innerHTML = totalCount;
-  console.log(totalCount);
-}
-
-countProduct();

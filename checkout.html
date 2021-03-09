@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products List</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+  <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="container">
+    <nav class="nav_wrapper">
+      <div class="logo">
+        <img src="./assets/Logo.png" />
+      </div>
+      <div class="menu">
+        <ul class="menu_items">
+          <li><a href="./index.html">HOME</a></li>
+          <li>SHOP</li>
+          <li><a href="./index.html#clothing_section">CLOTHING</a></li>
+          <li><a href="./index.html#accessories_section">ACCESSORIES</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="cart_wrapper">
+      <ion-icon name="search-circle-outline"></ion-icon>
+      <span class="cart_icon">
+        <a href="./checkout.html">
+          <ion-icon name="cart-outline"></ion-icon>
+          <span id="cart_count">0</span>
+        </a>
+      </span>
+      <ion-icon name="person-outline"></ion-icon>
+    </div>
+  </header>
+  <!-- END OF Navigation Menu -->
+
+  <!-- Offer Label -->
+  <div class="offer_runner inner_offer">
+    <div class="container">
+      <div class="offer_runner_content col-12">
+        <a href="#"> Spring it on! Shop our latest new arrivals. </a>
+      </div>
+    </div>
+  </div>
+  <!-- END OF Offer Label -->
+
+  <div class="container" id="checkout-wraper">
+    <div class="row">
+      <div class="col-2-of-3">
+        <div class="checkout_card">
+          <div class="checkout_title">Order Summary</div>
+          <div id="checkout">
+            <!-- <div class="checkout_product_card">
+              <div class="checkout_product">
+                <img src="./assets/Puma-Men-Black-Solid-Sporty-Jacket.webp" />
+              </div>
+
+              <div class="checkout_prod_details">
+                <div class="checkout_prod_title">
+                  Product : Men Navy Blue Solid Sweatshirt
+                </div>
+                <div class="checkout_prod_brand">Brand : Mast Harbour</div>
+
+                <div class="checkout_prod_qty">Quantity : 4</div>
+                <div class="checkout_prod_price">Price : Rs.1999</div>
+              </div>
+            </div>
+
+            <div class="checkout_product_card">
+              <div class="checkout_product">
+                <img src="./assets/United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.webp" />
+              </div>
+
+              <div class="checkout_prod_details">
+                <div class="checkout_prod_title">
+                  Product : Men Navy Blue Solid Sweatshirt
+                </div>
+                <div class="checkout_prod_brand">Brand : Mast Harbour</div>
+
+                <div class="checkout_prod_qty">Quantity : 4</div>
+                <div class="checkout_prod_price">Price : Rs.1999</div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-1-of-3">
+        <div class="place_order_card">
+          <div class="order_title">Price Breakdown</div>
+          <div class="order_amt">
+            <div class="amount_title">Amount</div>
+            <div class="amount_price" id="amount_price">Rs.0</div>
+          </div>
+
+          <div class="order_vat_amt">
+            <div class="vat_title">GST</div>
+            <div class="vat_price">18%</div>
+          </div>
+          <hr />
+          <div class="total_amt_container">
+            <div class="total_amt_title">Total Amount</div>
+            <div class="total_amt_price" id="total_amt_price">Rs.0</div>
+          </div>
+
+          <a href="" class="place_order">Place Order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/add_to_cart.js"></script>
+  <script src="./js/checkout_page.js"></script>
+
+</body>
+
+</html>
