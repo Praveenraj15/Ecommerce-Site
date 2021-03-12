@@ -491,7 +491,7 @@ header .cart_wrapper .cart_icon #cart_count {
   background-color: #48cab2;
   color: #fff;
   padding: 10px 20px;
-  top: 95px;
+  top: 105px;
   right: 0px;
   border-radius: 3px;
   -webkit-transform: translateX(300px);
@@ -802,6 +802,10 @@ header .cart_wrapper .cart_icon #cart_count {
   padding-top: 12rem;
 }
 
+.no-order {
+  font-size: 1.8rem;
+}
+
 .checkout_card {
   padding: 0px 30px;
   border-radius: 3px;
@@ -987,5 +991,85 @@ header .cart_wrapper .cart_icon #cart_count {
   color: #fff;
   background-color: #48cab2;
   border: 1px solid #48cab2;
+}
+
+footer {
+  width: 100%;
+  background-color: #1c1b1e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 4% 8%;
+}
+
+footer > div {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+footer .footer-heading {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+footer .footer-link {
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin-top: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+#thankyou {
+  height: 60vh;
+  padding-top: 14rem;
+  margin-bottom: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#thankyou .thankyou_wraper {
+  width: 200px;
+  height: 200px;
+  background-color: #48cab2;
+  border-radius: 50%;
+  padding: 40px;
+  margin-bottom: 2rem;
+}
+
+#thankyou .thankyou_wraper img {
+  width: 100%;
+}
+
+#thankyou .sucess-title {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+#thankyou .sucess-des {
+  color: #777;
+  font-size: 2rem;
 }
 /*# sourceMappingURL=style.css.map */

@@ -45,7 +45,7 @@ function totalPrice() {
       Amount += Number(productList[i].totalPrice);
     }
   }
-  gstAmount = (Amount * 18) / 100;
+  gstAmount = (Amount * 6) / 100;
   totalAmount = Amount + gstAmount;
   amountPrice.innerHTML = Amount;
   totalAmtPrice.innerHTML = totalAmount.toFixed(2);

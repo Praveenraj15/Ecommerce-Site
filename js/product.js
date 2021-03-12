@@ -1,8 +1,6 @@
 let productId = window.location.search.split("=")[1];
 const productDetails = document.getElementById("productDetails");
 const productImg = document.getElementById("productImg");
-const productMainImg = document.getElementById("product_main_img");
-const productPreview = document.querySelectorAll(".product_small_preview");
 
 fetch("https://5d76bf96515d1a0014085cf9.mockapi.io/product/" + productId)
   .then((response) => response.json())
@@ -16,7 +14,11 @@ const productDisplay = (data) => {
   let previewHtml = "";
 
   for (let i = 0; i < preview.length; i++) {
-    previewHtml += `<li><img class="product_small_preview active_image" src="${preview[i]}" /></li>`;
+    if (i == 0) {
+      previewHtml += `<img class="product_small_preview active_image" src="${preview[i]}" data-id="${preview[i]}" />`;
+    } else {
+      previewHtml += `<img class="product_small_preview" src="${preview[i]}" data-id="${preview[i]}" />`;
+    }
   }
 
   let productImgSrc = `<img id="product_main_img" src="${data.preview}" />`;
@@ -30,7 +32,7 @@ const productDisplay = (data) => {
       </div>
       <div class="p_product_preview">
         <div class="p_product_preview_title">Product Preview</div>
-        <ul class="p_product_preview_thumb">${previewHtml}</ul>
+        <div class="p_product_preview_thumb">${previewHtml}</div>
       </div>
       <div class=" product_cart_buttons">
             <div class="product_add_to_cart">
@@ -41,22 +43,21 @@ const productDisplay = (data) => {
       </div>`;
   productImg.innerHTML = productImgSrc;
   productDetails.innerHTML = productDetailsHolder;
+  updateProductthumbnail();
 };
 
-// for (let i = 0; i < productPreview.length; i++) {
-//   productPreview[i].addEventListener("click", function (e) {
-//     console.log(e);
-//   });
-//   console.log("clicked");
-// }
-
-// function changeImg() {
-//   var attribute = this.getAttribute("src");
-//   console.log(attribute);
-// }
-
-productPreview.forEach((el) =>
-  el.addEventListener("click", (event) => {
-    console.log(event.target.getAttribute("src"));
-  })
-);
+const updateProductthumbnail = () => {
+  const productImage = document.getElementById("product_main_img");
+  const thumb_div = document.getElementsByClassName(" product_small_preview");
+  for (let i = 0; i < thumb_div.length; i++) {
+    thumb_div[i].addEventListener("click", function (e) {
+      console.log("test");
+      productImage.src = e.target.dataset.id;
+      const current = document.getElementsByClassName("active_image");
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace("active_image", "");
+      }
+      this.className = "active_image";
+    });
+  }
+};
